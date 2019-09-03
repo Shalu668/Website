@@ -1,0 +1,13 @@
+.Banner-comp{       
+       display: flex;
+       align-items: center;
+       justify-content: center;
+      
+       
+    
+}
+.Banner-comp img{
+        margin: 10px;
+        width: 300px;
+        height:250px;
+}
