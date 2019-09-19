@@ -1,0 +1,30 @@
+.attendance{
+    color:white;
+    display:flex
+    
+    
+}
+.year-month-displayr{
+    display: flex; 
+}
+.year{
+    display: flex;
+
+}
+.month{
+    display: flex;
+    direction: row
+}
+.display-date{
+    display: flex;
+
+}
+.input-display{
+    margin: 4PX;
+    width:20px;
+}
+.hhhh{
+ 
+display: flex;
+
+}

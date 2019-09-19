@@ -1,0 +1,187 @@
+import React from "react";
+import "./index.css";
+import { appendFile } from "fs";
+
+class Attendance extends React.Component {
+    state = {
+        tableData: {
+            cell: null
+        }
+    }
+
+    GenerateTable = () => {
+
+
+        alert("true")
+    }
+
+    mainHandler = (value, key) => {
+        const { tableData } = this.state;
+        const { CreateDate } = this;
+        const { CreateTable } = this;
+
+        var getTableRows = document.getElementById("ssss")
+        var tr = getTableRows;
+        var td;
+        if (td.setAttribute('value', 'A')) {
+            td.setAttribute('style', 'background-color:blue');
+
+        }
+        this.setState({
+            ...this.state,
+            tableData: { ...tableData, [key]: value }
+
+
+
+        });
+    }
+
+
+
+    CreateTable = () => {
+        // var ar=["1"]
+        var getTableRows = document.getElementById("ssss")
+        var tr = getTableRows;
+
+        var d = new Date();
+        var n = d.getDate();
+
+        var z = new Array();
+        // z=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        z[0] = "Sunday";
+        z[1] = "Monday";
+        z[2] = "Tuesday";
+        z[3] = "Wednesday";
+        z[4] = "Thursday";
+        z[5] = "Friday";
+        z[6] = "Saturday";
+
+
+        let arrVar = [];
+
+        for (let p = 0; p <= 30; p = p + 7) {
+            let o = p;
+
+            arrVar.push(o);
+        }
+
+        for (let f = 6; f <= 30; f = f + 7) {
+            let j = f;
+            arrVar.push(j);
+        }
+
+        for (var t = 0; t < n; t++) {
+            var td = document.createElement('input');
+            td.setAttribute('type', 'text');
+            for (let k = 0; k <= arrVar.length; k++) {
+                if (t == arrVar[k]) {
+                    
+                    td.setAttribute('value', 'H');
+                    td.setAttribute('style', 'background-color:red');
+                    tr.appendChild(td);
+                    break;
+                }
+
+                else {
+
+                    td.setAttribute('value', 'P');
+                    td.setAttribute('style', 'background-color:green');
+                    tr.appendChild(td);
+                }
+
+                
+            }
+        }
+
+    }
+
+    CreateDate = () => {
+
+        const { CreateTable } = this;
+        CreateTable();
+        var arr = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+        var dateTextBox = document.getElementById("hhhh");
+        var tr = dateTextBox;
+        var d = new Date();
+        let n = d.getDate();
+
+
+        for (var h = 0; h < n; h++) {
+            var th = document.createElement("th")
+            th.innerHTML = arr[h];
+            tr.appendChild(th);
+        }
+
+    }
+
+    render() {
+        const { tableData } = this.state;
+        const { cell } = this.state;
+        const { mainHandler } = this;
+        return (
+            <div className="attendance">
+                <label>Month:</label>
+                <select id="month">
+                    <option >january</option>
+                    <option >february</option>
+                    <option >March</option>
+                    <option >April</option>
+                    <option >May</option>
+                    <option >June</option>
+                    <option >July</option>
+                    <option >August</option>
+                    <option >September</option>
+                    <option >August</option>
+                    <option >November</option>
+                    <option >December</option>
+                </select>
+                <br />
+                <label>Year:</label>
+                <select>
+                    <input type="year" ></input>
+                </select>
+                <label>ye</label>
+                <input type="number" name="quantity" max="2000" min="2019" ></input>
+                <br /> <br />
+                <table id="table">
+                    <tr>
+                        <th>Name</th>
+                        <th>Checkbox</th>
+                        <th id="hhhh" ></th>
+
+                    </tr>
+                    <tr>
+                        <td>Shalu</td>
+                        <td> <input type="checkbox" onClick={this.CreateDate} ></input></td>
+                        <td id="ssss" onChange={e => {
+                            mainHandler(e.target.value, "cell");
+                        }}
+                            value={cell}></td>
+                    </tr>
+                    <tr>
+                        <td>Bikki</td>
+                        <input type="checkbox"></input>
+
+                    </tr>
+                    <tr>
+                        <td>Anshuman</td>
+                        <input type="checkbox"></input>
+
+                    </tr>
+                    <tr>
+                        <td>Shushant</td>
+                        <input type="checkbox"></input>
+
+                    </tr>
+                </table>
+
+
+
+
+
+            </div>
+        )
+    }
+}
+
+export default Attendance;

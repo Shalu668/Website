@@ -1,0 +1,17 @@
+.reg-style{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;;
+    
+    height:50vh;
+    text-transform: uppercase;
+    font-weight:bold;
+    Padding:10px;
+    background:darkolivegreen;
+    border: 10px solid gray;
+    margin-left: 30%;
+    margin-right: 30%;
+    
+}
